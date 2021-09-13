@@ -20,6 +20,7 @@ headers.append("Content-Type", "application/json");
  * @returns {*}
  *  a copy of the deck instance with the `cards` property removed.
  */
+// ??? i am not sure what this function does, it is called from the createDeck function
 function stripCards(deck) {
   const { cards, ...deckWithoutCards } = deck;
   return deckWithoutCards;
@@ -90,11 +91,12 @@ export async function listDecks(signal) {
  * @returns {Promise<deck>}
  *  a promise that resolves the saved deck, which will now have an `id` property.
  */
-export async function DeckCreate(deck, signal) {
+export async function createDeck(deck, signal) {
   const url = `${API_BASE_URL}/decks`;
   const options = {
     method: "POST",
     headers,
+    // ??? not sure what this line does:
     body: JSON.stringify(stripCards(deck)),
     signal,
   };

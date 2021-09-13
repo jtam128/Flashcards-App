@@ -1,14 +1,15 @@
 import React from "react";
 import "../App.css";
-import { FaHome } from "react-icons/fa";
+import { FaHome, FaTrashAlt } from "react-icons/fa";
 import { Link, Switch, Route } from "react-router-dom";
 import Header from "./Header";
 
 
-function ViewDeck() {
+function DeckView() {
   return (
     <>
       <Header />
+      {/* show the deck from the array */}
       <div>
         <nav aria-label="breadcrumb">
           <ul class="breadcrumb">
@@ -28,17 +29,18 @@ function ViewDeck() {
         </div>
         <div class="deck-buttons-container">
           <div class="btn-group-left">
-            <button class="button-sm btn-normal" id="edit">Edit</button>
+            <Link to="/deks/:deckId/edit"><button class="button-sm btn-normal" id="edit">Edit</button></Link>
             <Link to="/decks/:deckId/study"><button class="button-sm btn-normal" id="study">Study</button></Link>
-            <button class="button-sm btn-normal" id="cards">Add Cards</button>
+            <Link to="/decks/:deckId/cards/new"><button class="button-sm btn-normal" id="cards">Add Cards</button></Link>
 
           </div>
           <div class="btn-group-right">
-            <button class="button-sm btn-delete" id="trash">Delete</button>
+            <button class="button-sm btn-delete" id="trash"><FaTrashAlt /></button>
           </div>
         </div>
       </div>
 
+      {/* show the cards from the deck */}
       <h1>Cards</h1>
       <div class="decks">
         <div class="row justify-content-center">
@@ -61,4 +63,4 @@ function ViewDeck() {
   );
 }
 
-export default ViewDeck;
+export default DeckView;

@@ -2,5 +2,4 @@
 .vercel
 .attachignore
 .qualified-attach.json 
-local
 node_modules

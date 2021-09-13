@@ -85,15 +85,16 @@ ul.breadcrumb li a:hover {
   text-decoration: underline;
 }
 
-/*
-body {
+/* body {
   height: 100vh;
   display: flex;
-  /* align-items: center; */
-
-/* justify-content: center;
+  justify-content: center;
   font-family: var(--ff);
 } */
+
+body {
+  background-color: wheat;
+}
 
 * {
   box-sizing: border-box;
@@ -105,7 +106,8 @@ h1, h2, h3, p {
 
 .container {
   width: 90%;
-  max-width: 1200px;
+  max-width: 700px;
+  /* border: red solid 2px; */
   margin: 0 auto;
   position: relative;
 }

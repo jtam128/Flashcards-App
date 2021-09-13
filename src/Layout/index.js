@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import DeckCreate from "./DeckCreate";
-import ViewDeck from "./ViewDeck";
+import DeckView from "./DeckView";
 import DeckStudy from "./DeckStudy";
 import NotFound from "./NotFound";
 
@@ -19,15 +19,19 @@ function Layout() {
         <Route exact path="/">
           <Home />
         </Route>
+
         <Route path="/decks/new">
           <DeckCreate />
         </Route>
+
         <Route exact path="/decks/:deckId">
-          <ViewDeck />
+          <DeckView />
         </Route>
+
         <Route path="/decks/:deckId/study">
           <DeckStudy />
         </Route>
+
         <Route>
           <NotFound />
         </Route>
