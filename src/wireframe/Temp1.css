@@ -1,0 +1,232 @@
+:root {
+  /* font  */
+  --ff: 'Fira Sans', sans-serif;
+  /* font weight  */
+  --fw-n: 300;
+  --fw-m: 600;
+  --fw-b: 800;
+  /* font size  */
+  --fs-p5: .5rem;
+  --fs-1: 1rem;
+  --fs-1p5: 1.5rem;
+  --fs-2: 2rem;
+  --fs-3: 3rem;
+  --fs-4: 4rem;
+  --fs-p: rem;
+  /* color  */
+  --primary-clr: #225560;
+  --secondary-clr: #36213E;
+  --secondary-clr-light: #554971;
+  --accent-clr: #EF6461;
+  /* space  */
+  --spacer: 1rem;
+  --spacer-md: calc(var(--spacer) * 2);
+  --spacer-lg: calc(var(--spacer) * 3);
+  --shadow: 0 0 1em rgba(0, 0, 0, .25);
+  /* button radius */
+  --br: 15px;
+  /* --br: 5px; */
+}
+
+/* Create two equal columns that floats next to each other */
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px;
+  /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Breadcrumb list */
+
+/* Style the list */
+
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #eee;
+}
+
+/* Display list items side by side */
+
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+/*
+body {
+  height: 100vh;
+  display: flex;
+  /* align-items: center; */
+
+/* justify-content: center;
+  font-family: var(--ff);
+} */
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.decks {
+  /* display: flex; */
+  color: black;
+  border: solid 1px grey;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.create-deck {
+  padding-bottom: .2em;
+}
+
+.card-name-number {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .card-question {} */
+
+.deck-buttons-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-name-number, .deck-buttons-container, .card-question {
+  padding: .2em;
+}
+
+h2 {
+  font-size: var(--fs-1p5);
+  font-weight: var(--fw-m);
+  /* margin: 0 0 .5em; */
+}
+
+p {
+  margin: 0 0 var(--spacer);
+}
+
+strong {
+  font-weight: var(--fw-m);
+}
+
+.button-org {
+  display: inline-block;
+  background: var(--primary-clr);
+  color: white;
+  text-decoration: none;
+  padding: 1em 1.5em;
+  border-radius: var(--br);
+  font-weight: var(--fw-b);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: .8rem;
+}
+
+.button-sm {
+  display: inline-block;
+  background: var(--primary-clr);
+  color: white;
+  text-decoration: none;
+  padding: .5em .75em;
+  border-radius: var(--br);
+  font-weight: var(--fw-n);
+  /* text-transform: uppercase; */
+  letter-spacing: 1px;
+  font-size: .8rem;
+}
+
+.button--card {
+  margin-top: var(--spacer);
+}
+
+.pricing__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: var(--spacer-md);
+}
+
+.card {
+  border-radius: var(--br);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.card--important {
+  --primary-clr: var(--accent-clr);
+}
+
+.card__title {
+  background: var(--primary-clr);
+  color: rgba(255, 255, 255, .7);
+  margin: 0;
+  padding: var(--spacer) 0;
+  font-weight: var(--fw-m);
+  letter-spacing: 2px;
+  text-align: center;
+  font-size: .8rem;
+  text-transform: uppercase;
+}
+
+.card__price {
+  color: var(--primary-clr);
+  padding: 1em var(--spacer-lg);
+  margin: 0;
+  font-size: 2em;
+  font-weight: var(--fw-b);
+}
+
+.card__price span {
+  font-size: .5em;
+  font-weight: var(--fw-n);
+}
+
+.card__body {
+  padding: 0 var(--spacer-lg) 2em;
+}
+
+h2 {
+  color: red;
+}
