@@ -20,7 +20,6 @@ headers.append("Content-Type", "application/json");
  * @returns {*}
  *  a copy of the deck instance with the `cards` property removed.
  */
-// ??? i am not sure what this function does, it is called from the createDeck function
 function stripCards(deck) {
   const { cards, ...deckWithoutCards } = deck;
   return deckWithoutCards;
@@ -42,7 +41,6 @@ function stripCards(deck) {
  *  If the response is not in the 200 - 399 range the promise is rejected.
  */
 
-// ??? go over the flow of this
 async function fetchJson(url, options, onCancel) {
   try
   {
@@ -96,7 +94,6 @@ export async function createDeck(deck, signal) {
   const options = {
     method: "POST",
     headers,
-    // ??? not sure what this line does:
     body: JSON.stringify(stripCards(deck)),
     signal,
   };
@@ -112,10 +109,9 @@ export async function createDeck(deck, signal) {
  * @returns {Promise<any>}
  *  a promise that resolves to the saved deck.
  */
-// cur..
 export async function readDeck(deckId, signal) {
   const url = `${API_BASE_URL}/decks/${deckId}?_embed=cards`;
-  console.log(`url :>> `, url); // dbg..
+
   return await fetchJson(url, { signal }, {});
 }
 

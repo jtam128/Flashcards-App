@@ -7,7 +7,7 @@ import { createMemoryHistory } from "history";
 import "@testing-library/jest-dom/extend-expect";
 import {
   createCard,
-  DeckCreate,
+  createDeck,
   deleteCard,
   deleteDeck,
   listCards,
@@ -29,7 +29,7 @@ describe("Decks", () => {
       front:
         "Default mock response. If you see this, you probably do not need this API call.",
     });
-    DeckCreate.mockResolvedValue({
+    createDeck.mockResolvedValue({
       name:
         "Default mock response. If you see this, you probably do not need this API call.",
     });
@@ -311,7 +311,6 @@ describe("Decks", () => {
 
     expect(screen.queryByText(/next/i)).toBeTruthy();
   });
-
   test("route for /decks/:deckId/study not enough cards", async () => {
     const mockDeck = {
       name: "Mock Study Deck 13",

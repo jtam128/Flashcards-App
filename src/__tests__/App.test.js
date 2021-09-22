@@ -6,7 +6,7 @@ import { createMemoryHistory } from "history";
 import "@testing-library/jest-dom/extend-expect";
 import {
   createCard,
-  DeckCreate,
+  createDeck,
   deleteCard,
   deleteDeck,
   listCards,
@@ -27,7 +27,7 @@ describe("App", () => {
       front:
         "Default mock response. If you see this, you probably do not need this API call.",
     });
-    DeckCreate.mockResolvedValue({
+    createDeck.mockResolvedValue({
       name:
         "Default mock response. If you see this, you probably do not need this API call.",
     });

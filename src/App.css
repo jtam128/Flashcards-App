@@ -1,6 +1,4 @@
 :root {
-  /* font  */
-  --ff: 'Fira Sans', sans-serif;
   /* font weight  */
   --fw-n: 300;
   --fw-m: 600;
@@ -14,10 +12,8 @@
   --fs-4: 4rem;
   --fs-p: rem;
   /* color  */
-  /* --primary-clr: #225560; */
   --secondary-clr: #36213E;
   --secondary-clr-light: #554971;
-  /* --accent-clr: #EF6461; */
   /* space  */
   --spacer: 1rem;
   --spacer-md: calc(var(--spacer) * 2);
@@ -25,72 +21,7 @@
   --shadow: 0 0 1em rgba(0, 0, 0, .25);
   /* button radius */
   --br: 5px;
-  /* --br: 5px; */
 }
-
-/* Create two equal columns that floats next to each other */
-
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  height: 300px;
-  /* Should be removed. Only for demonstration */
-}
-
-/* Clear floats after the columns */
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Breadcrumb list */
-
-/* Style the list */
-
-ul.breadcrumb {
-  padding: 10px 16px;
-  list-style: none;
-  background-color: #eee;
-}
-
-/* Display list items side by side */
-
-ul.breadcrumb li {
-  display: inline;
-  font-size: 18px;
-}
-
-/* Add a slash symbol (/) before/behind each list item */
-
-ul.breadcrumb li+li:before {
-  padding: 8px;
-  color: black;
-  content: "/\00a0";
-}
-
-/* Add a color to all links inside the list */
-
-ul.breadcrumb li a {
-  color: #0275d8;
-  text-decoration: none;
-}
-
-/* Add a color on mouse-over */
-
-ul.breadcrumb li a:hover {
-  color: #01447e;
-  text-decoration: underline;
-}
-
-/* body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  font-family: var(--ff);
-} */
 
 body {
   background-color: wheat;
@@ -104,21 +35,72 @@ h1, h2, h3, p {
   margin: 0;
 }
 
-.container {
+/* Create two equal columns that floats next to each other */
+
+.line1 {
+  color: green;
+  padding-bottom: .5em;
+}
+
+.line2 {
+  color: tomato;
+  padding-bottom: .3em;
+}
+
+.not-enough-card {
+  color: red;
+  font-size: 1.5em;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 100px;
+}
+
+/* body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  font-family: var(--ff);
+} */
+
+.breadcrumb-nav {
+  border: solid 2px;
+  background-color: beige;
+}
+
+.breadcrumb-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: .2em .5em;
+}
+
+.breadcrumbx-item {
+  padding-right: .75rem;
+}
+
+.main-container {
   width: 90%;
   max-width: 700px;
-  /* border: red solid 2px; */
   margin: 0 auto;
   position: relative;
 }
 
-.decks {
+.deck-container {
+  border: solid black 2px;
+}
+
+.cards-container {
   /* display: flex; */
   color: black;
-  border: solid 1px grey;
+  border: solid 2px darkgreen;
   flex-direction: column;
   padding: 1em;
   border-radius: 4px;
+  margin-bottom: 1em;
 }
 
 .create-deck {
@@ -129,8 +111,6 @@ h1, h2, h3, p {
   display: flex;
   justify-content: space-between;
 }
-
-/* .card-question {} */
 
 .deck-buttons-container {
   display: flex;
@@ -181,18 +161,22 @@ p {
   font-size: .8rem;
 }
 
-#create, #view, #cancel, #flip, #edit {
+.btn-done, .btn-cancel, .btn-flip, .btn-edit, .btn-create, .btn-view {
   background-color: grey;
 }
 
-#study, #submit, #study, #cards {
-  background-color: rgb(61, 95, 206);
+.btn-save, .btn-submit, .btn-study, .btn-add {
+  background-color: blue;
 }
 
-#trash {
+.btn-delete {
   background-color: red;
 }
 
-h2 {
-  color: black;
+.btn-delete:hover {
+  background-color: rgb(153, 1, 1);
 }
+
+/* h2 {
+  color: black;
+} */
