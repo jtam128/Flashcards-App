@@ -31,10 +31,10 @@ function DeckCreate() {
   return (
     <>
       <div className="main-container">
-        <nav class="breadcrumb-nav">
-          <ul class="breadcrumb-list">
+        <nav className="breadcrumb-nav">
+          <ul className="breadcrumb-list">
             <Link to="/">
-              <li class="breadcrumbx-item">
+              <li className="breadcrumbx-item">
                 <FaHome />Home
                 <span> / </span>
               </li>
@@ -57,7 +57,7 @@ function DeckCreate() {
 
           <div className="deck-buttons-container">
             <div className="btn-group-left">
-              <button class="button-sm btn-cancel" onClick={() => history.push(`/`)}>Cancel</button>
+              <button className="button-sm btn-cancel" onClick={() => history.push(`/`)}>Cancel</button>
               <button className="button-sm btn-submit" id="submit" type="submit">Submit</button>
 
             </div>

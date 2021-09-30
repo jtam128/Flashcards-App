@@ -44,29 +44,29 @@ function DeckStudy() {
   // shows current deck title
   function Line1() {
     if (fliped)
-      return <h1 class="line1">{deck.name}: Study</h1>
+      return <h1 className="line1">{deck.name}: Study</h1>
     else
-      return <h1 class="line1">Study: {deck.name}</h1>
+      return <h1 className="line1">Study: {deck.name}</h1>
   }
 
   //shows current card
   function Line2() {
     if (notEnoughCards)
-      return <p class="line2 not-enough-card">Not enough cards.</p>
+      return <p className="line2 not-enough-card">Not enough cards.</p>
     else
-      return <h2 class="line2">Card {cardId + 1} of {deck.cards.length}</h2>
+      return <h2 className="line2">Card {cardId + 1} of {deck.cards.length}</h2>
   }
 
   function Content() {
     if (notEnoughCards)
-      return <p class="content-not-enough-card">You need at least 3 cards to study. There are 2 cards in this deck.</p>
+      return <p className="content-not-enough-card">You need at least 3 cards to study. There are 2 cards in this deck.</p>
     if (fliped)
       return (
         <>
           <div>
             {console.log(`content fliped :>> `, fliped)}
           </div>
-          <p class="content-normal">{deck.cards[cardId].back}</p>
+          <p className="content-normal">{deck.cards[cardId].back}</p>
         </>
       )
     else
@@ -75,7 +75,7 @@ function DeckStudy() {
           <div>
             {console.log(`content fliped :>> `, fliped)}
           </div>
-          <p class="content-normal">{deck.cards[cardId]?.front}</p>
+          <p className="content-normal">{deck.cards[cardId]?.front}</p>
         </>
       )
   }
@@ -126,10 +126,10 @@ function DeckStudy() {
           {console.log('in render')}
         </div>
         <div className="main-container">
-          <nav class="breadcrumb-nav">
+          <nav className="breadcrumb-nav">
             <ul className="breadcrumb-list">
               <Link to="/">
-                <li class="breadcrumbx-item">
+                <li className="breadcrumbx-item">
                   <FaHome />Home
                   <span> / </span>
                 </li>

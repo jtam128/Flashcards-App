@@ -52,10 +52,10 @@ function DeckEdit() {
   return (
     <>
       <div className="main-container">
-        <nav class="breadcrumb-nav">
-          <ul class="breadcrumb-list">
+        <nav className="breadcrumb-nav">
+          <ul className="breadcrumb-list">
             <Link to="/">
-              <li class="breadcrumbx-item">
+              <li className="breadcrumbx-item">
                 <FaHome />Home
                 <span> / </span>
               </li>
@@ -80,7 +80,7 @@ function DeckEdit() {
             </div>
             <div className="deck-buttons-container">
               <div className="btn-group-left">
-                <button class="button-sm btn-cancel" onClick={() => history.push(`/decks/${deck.id}`)}>Cancel</button>
+                <button className="button-sm btn-cancel" onClick={() => history.push(`/decks/${deck.id}`)}>Cancel</button>
                 <button className="button-sm btn-submit">Submit</button>
               </div>
             </div>

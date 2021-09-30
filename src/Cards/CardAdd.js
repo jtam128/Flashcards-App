@@ -56,21 +56,21 @@ function CardAdd() {
   return (
     <>
       <div className="main-container">
-        <nav class="breadcrumb-nav">
-          <ul class="breadcrumb-list">
+        <nav className="breadcrumb-nav">
+          <ul className="breadcrumb-list">
             <Link to="/">
-              <li class="breadcrumbx-item">
+              <li className="breadcrumbx-item">
                 <FaHome />Home
                 <span> / </span>
               </li>
             </Link>
-            <li class="breadcrumb-item">{deck.name}</li>
-            <li class="breadcrumb-item">Add Card</li>
+            <li className="breadcrumb-item">{deck.name}</li>
+            <li className="breadcrumb-item">Add Card</li>
           </ul>
         </nav>
 
         <div>
-          <div class="card-name">
+          <div className="card-name">
             <h1>{deck.name}: Add Card</h1>
           </div>
 

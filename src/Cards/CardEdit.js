@@ -64,22 +64,22 @@ function CardEdit() {
         {console.log(`inside render jsx`)}
       </div>
       <div className="main-container">
-        <nav class="breadcrumb-nav">
-          <ul class="breadcrumb-list">
+        <nav className="breadcrumb-nav">
+          <ul className="breadcrumb-list">
             <Link to="/">
-              <li class="breadcrumbx-item">
+              <li className="breadcrumbx-item">
                 <FaHome />Home
                 <span> / </span>
               </li>
             </Link>
-            <li class="breadcrumbx-item">Deck {deck.name}<span> / </span></li>
+            <li className="breadcrumbx-item">Deck {deck.name}<span> / </span></li>
 
-            <li class="breadcrumbx-item">Edit Card {card.id}</li>
+            <li className="breadcrumbx-item">Edit Card {card.id}</li>
           </ul>
         </nav>
 
         <div>
-          <div class="card-name">
+          <div className="card-name">
             <h1>Edit Card</h1>
           </div>
 
