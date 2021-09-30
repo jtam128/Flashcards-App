@@ -3,6 +3,7 @@ import "../App.css";
 import { Link, useParams, useHistory } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import { updateCard, readDeck } from "../utils/api";
+import CardForm from "./CardForm";
 
 function CardEdit() {
   const [front, setFront] = useState("");
@@ -82,25 +83,9 @@ function CardEdit() {
             <h1>Edit Card</h1>
           </div>
 
-          <form onSubmit={handleSubmit}>
-            <div class="card-number">
-
-              <h2>Front</h2>
-              <textarea id="w3review" name="w3review" rows="4" cols="50"
-                placeholder="Enter card Front information" onChange={handleFrontChange} value={front}></textarea>
-
-              <h2>Back</h2>
-              <textarea id="w3review" name="w3review" rows="4" cols="50" placeholder="Enter card Back information" onChange={handleBackChange} value={back}></textarea>
-            </div>
-
-            <div class="deck-buttons-container">
-              <div class="btn-group-left">
-
-                <button class="button-sm btn-cancel" onClick={() => history.push(`/decks/${deck.id}`)}>Cancel</button>
-                <button class="button-sm btn-submit">Submit</button>
-              </div>
-            </div>
-          </form>
+          <div>
+            <CardForm handleSubmit={handleSubmit} handleFrontChange={handleFrontChange} front={front} handleBackChange={handleBackChange} back={back} deck={deck} />
+          </div>
         </div>
       </div>
     </>

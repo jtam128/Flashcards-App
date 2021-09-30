@@ -30,7 +30,7 @@ function DeckEdit() {
     return () => {
       abortController.abort();
     };
-  }, [])
+  }, [deckId])
 
   const history = useHistory();
 
@@ -70,6 +70,7 @@ function DeckEdit() {
             <h1>Edit Deck</h1>
           </div>
 
+
           <form onSubmit={handleSubmit}>
             <div className="card-number">
               <h2>Name</h2>
@@ -84,7 +85,6 @@ function DeckEdit() {
               </div>
             </div>
           </form>
-
         </div>
       </div>
     </>

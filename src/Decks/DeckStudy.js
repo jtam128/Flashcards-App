@@ -14,24 +14,32 @@ function DeckStudy() {
 
   const params = useParams();
   const deckId = params.deckId;
+  console.log(1); // dbg..
 
   useEffect(() => {
+    console.log(2)
 
     const abortController = new AbortController();
     readDeck(deckId, abortController.signal).then((deck) => {
+      console.log(3)
       setCard(card)
       setDeck(deck)
       if (deck.cards.length <= 2)
         setNotEnoughCards(true)
     })
+      // cur..
+
       .catch(err => {
-        alert(err)
+        // console.log(`err :>> `, err); // dbg..
+        alert("DeckStudy " + err)
       });
 
     return () => {
       abortController.abort();
     };
-  }, [])
+  }, [card, deckId])
+
+  // if (!deck) return null;
 
   // shows current deck title
   function Line1() {
@@ -67,7 +75,7 @@ function DeckStudy() {
           <div>
             {console.log(`content fliped :>> `, fliped)}
           </div>
-          <p class="content-normal">{deck.cards[cardId].front}</p>
+          <p class="content-normal">{deck.cards[cardId]?.front}</p>
         </>
       )
   }
@@ -75,7 +83,7 @@ function DeckStudy() {
   const handleNextButton = (event) => {
     setFliped(false);
 
-    if (deck.cards.length - 1 == cardId)
+    if (deck.cards.length - 1 === cardId)
     {
       if (window.confirm('Restart cards?'))
       {

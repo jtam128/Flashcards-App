@@ -25,7 +25,7 @@ function DeckView() {
     return () => {
       abortController.abort();
     };
-  }, [])
+  }, [deckId])
 
   async function processCardDelete(card) {
     const abortController = new AbortController();
@@ -104,8 +104,8 @@ function DeckView() {
         </div>
 
         <h1>Cards</h1>
-        {(deck.cards) ? deck.cards.map((card) => (
-          <CardItem card={card} deleteCardHandler={deleteCardHandler} deck={deck} />
+        {(deck.cards) ? deck.cards.map((card, index) => (
+          <CardItem card={card} deleteCardHandler={deleteCardHandler} deck={deck} key={index} />
         )) : null}
       </div >
     </>

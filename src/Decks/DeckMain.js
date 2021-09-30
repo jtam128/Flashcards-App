@@ -13,6 +13,8 @@ function DeckMain() {
     listDecks(abortController.signal).then((decks) => {
       setDecks(decks)
     })
+    console.log(`listDecks :>> `, listDecks); // dbg..
+
     return () => {
       abortController.abort();
     };
