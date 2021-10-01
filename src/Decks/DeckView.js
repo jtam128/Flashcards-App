@@ -8,7 +8,7 @@ import CardItem from "../Cards/CardItem";
 function DeckView() {
   const [deck, setDeck] = useState({});
 
-  const deckId = useParams().deckId;
+  const { deckId } = useParams();
 
   useEffect(() => {
 

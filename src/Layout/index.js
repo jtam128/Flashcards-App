@@ -6,7 +6,6 @@ import DeckView from "../Decks/DeckView";
 import CardAdd from "../Cards/CardAdd";
 import DeckStudy from "../Decks/DeckStudy";
 import DeckEdit from "../Decks/DeckEdit";
-import CardItem from "../Cards/CardItem";
 import CardEdit from "../Cards/CardEdit";
 import NotFound from "./NotFound";
 import Header from "./Header";
@@ -35,10 +34,6 @@ function Layout() {
 
         <Route exact path="/decks/:deckId">
           <DeckView />
-        </Route>
-
-        <Route exact path="/decks/:deckId">
-          <CardItem />
         </Route>
 
         <Route exact path="/decks/:deckId/cards/:cardId/edit">
