@@ -31,8 +31,8 @@
       "deckId": 1
     },
     {
-      "front": "abc",
-      "back": "abc",
+      "front": "What path will match the follow Route?\n<Route>\n  <NotFound />\n</Route>",
+      "back": "All paths. A route with no path matches all URL's",
       "deckId": 2,
       "id": 4
     },
@@ -48,12 +48,6 @@
       "back": "b",
       "deckId": 1,
       "id": 7
-    },
-    {
-      "front": "abc",
-      "back": "dcb",
-      "deckId": 2,
-      "id": 8
     }
   ]
 }
