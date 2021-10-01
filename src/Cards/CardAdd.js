@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
-import { Link, useParams, useHistory } from "react-router-dom";
-import { FaHome } from "react-icons/fa";
+import { Link, useParams } from "react-router-dom";
 import { createCard, readDeck } from "../utils/api";
 import CardForm from "./CardForm";
 
@@ -38,8 +37,6 @@ function CardAdd() {
     };
   }, [])
 
-  const history = useHistory();
-
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -60,7 +57,7 @@ function CardAdd() {
           <ul className="breadcrumb-list">
             <Link to="/">
               <li className="breadcrumbx-item">
-                <FaHome />Home
+                Home
                 <span> / </span>
               </li>
             </Link>

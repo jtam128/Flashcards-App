@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
 import { Link, useParams, useHistory } from "react-router-dom";
-import { FaHome } from "react-icons/fa";
 import { updateCard, readDeck } from "../utils/api";
 import CardForm from "./CardForm";
 
@@ -50,7 +49,7 @@ function CardEdit() {
     event.preventDefault();
     const abortController = new AbortController();
 
-    const updatedCard = await updateCard({ ...card, front: front, back: back }, abortController.signal)
+    await updateCard({ ...card, front: front, back: back }, abortController.signal)
 
     setFront("");
     setBack("");
@@ -68,7 +67,7 @@ function CardEdit() {
           <ul className="breadcrumb-list">
             <Link to="/">
               <li className="breadcrumbx-item">
-                <FaHome />Home
+                Home
                 <span> / </span>
               </li>
             </Link>

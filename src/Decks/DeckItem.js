@@ -1,6 +1,5 @@
 import React from "react";
 import "../App.css";
-import { FaRegEye, FaTrashAlt } from "react-icons/fa";
 // import { FaPlus, FaRegEye, FaRegSave, FaTrashAlt } from "react-icons/fa";
 import { Link, useHistory } from "react-router-dom";
 
@@ -22,12 +21,12 @@ function DeckItem({ deck, deleteHandler }) {
 
         <div className="deck-buttons-container">
           <div className="btn-group-left">
-            <Link to={`/decks/${deck.id}`}><button className="button-sm btn-view" id="view"><FaRegEye /> View</button></Link>
+            <Link to={`/decks/${deck.id}`}><button className="button-sm btn-view" id="view"> View</button></Link>
             <span />
             <button className="button-sm btn-study" onClick={() => history.push(`/decks/${deck.id}/study`)}>Study</button>
           </div>
           <div className="btn-group-right">
-            <button className="button-sm btn-delete" id="trash" onClick={event => deleteHandler(deck)}><FaTrashAlt /></button>
+            <button className="button-sm btn-delete" id="trash" onClick={event => deleteHandler(deck)}>Delete</button>
           </div>
         </div>
 

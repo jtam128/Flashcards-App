@@ -1,9 +1,7 @@
 import React from "react";
 import "../App.css";
 import { useEffect, useState } from "react";
-import { FaHome } from "react-icons/fa";
-// import { FaHome, FaTrashAlt } from "react-icons/fa";
-import { Link, useParams, useHistory } from "react-router-dom";
+import { Route, Link, useParams, useHistory } from "react-router-dom";
 import { readDeck, deleteCard, deleteDeck } from "../utils/api";
 import CardItem from "../Cards/CardItem";
 
@@ -29,9 +27,7 @@ function DeckView() {
 
   async function processCardDelete(card) {
     const abortController = new AbortController();
-
     await deleteCard(card.id, abortController.signal);
-
     const deckFromServer = await readDeck(deck.id, abortController.signal)
     try
     {
@@ -40,7 +36,6 @@ function DeckView() {
     {
       alert(err)
     }
-
   }
 
   const deleteCardHandler = (card) => {
@@ -52,13 +47,12 @@ function DeckView() {
 
   async function processDeckDelete(deck) {
     const abortController = new AbortController();
-
     await deleteDeck(deck.id, abortController.signal);
   }
 
   const history = useHistory();
-  const deleteDeckHandler = (deck) => {
 
+  const deleteDeckHandler = (deck) => {
     if (window.confirm('Are you sure you wish to delete this item?'))
     {
       processDeckDelete(deck);
@@ -69,17 +63,19 @@ function DeckView() {
   return (
     <>
       <div className="main-container">
-        <nav className="breadcrumb-nav">
-          <ul className="breadcrumb-list">
-            <Link to="/">
-              <li className="breadcrumbx-item">
-                <FaHome />Home
-                <span> / </span>
-              </li>
-            </Link>
-            <li className="breadcrumb-item">&nbsp;{deck.name}</li>
-          </ul>
-        </nav>
+        <Route path="/decks">
+          <nav className="breadcrumb-nav">
+            <ul className="breadcrumb-list">
+              <Link to="/">
+                <li className="breadcrumbx-item">
+                  Home
+                  <span> / </span>
+                </li>
+              </Link>
+              <li className="breadcrumb-item">&nbsp;{deck.name}</li>
+            </ul>
+          </nav>
+        </Route>
 
         <div>
           <div className="card-name">
@@ -108,6 +104,7 @@ function DeckView() {
           <CardItem card={card} deleteCardHandler={deleteCardHandler} deck={deck} key={index} />
         )) : null}
       </div >
+
     </>
   );
 }
