@@ -11,8 +11,7 @@ function DeckStudy() {
   const [fliped, setFliped] = useState(false);
   const [notEnoughCards, setNotEnoughCards] = useState(false);
 
-  const params = useParams();
-  const deckId = params.deckId;
+  const { deckId } = useParams();
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -115,7 +114,8 @@ function DeckStudy() {
                   <span> / </span>
                 </li>
               </Link>
-              <li className="breadcrumbx-item">{deck.name}<span> / </span></li>
+              <Link to={`/decks/${deck.id}`}>
+                <li className="breadcrumbx-item">{deck.name}<span> / </span></li></Link>
               <li className="breadcrumbx-item active" aria-current="page">Study</li>
             </ul>
           </nav>

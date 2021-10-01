@@ -17,29 +17,29 @@ function CardEdit() {
 
   const handleBackChange = (event) => { setBack(event.target.value) }
 
+  const { deckId, cardId } = useParams();
+  console.log(`useParams() :>> `, useParams()); // dbg..
+  console.log(`2`); // dbg..
 
-  const params = useParams();
-  const deckId = params.deckId;
-  const cardId = Number(params.cardId);
 
   useEffect(() => {
 
     const abortController = new AbortController();
     readDeck(deckId, abortController.signal).then((deck) => {
-      const card = deck.cards.find(card => card.id === cardId);
-      setFront(card.front)
-      setBack(card.back)
+      const card = deck.cards.find(card => card.id === Number(cardId));
       setCard(card)
       setDeck(deck)
+      setFront(card.front)
+      setBack(card.back)
     })
       .catch(err => {
-        alert(err)
+        console.error(err);
       });
 
     return () => {
       abortController.abort();
     };
-  }, [])
+  }, [deckId, cardId])
 
 
   const history = useHistory();
@@ -53,8 +53,8 @@ function CardEdit() {
 
     setFront("");
     setBack("");
+    console.log(`5`); // dbg..
     history.push(`/decks/${deck.id}`);
-
   }
 
   return (
@@ -68,7 +68,9 @@ function CardEdit() {
                 <span> / </span>
               </li>
             </Link>
-            <li className="breadcrumbx-item">Deck {deck.name}<span> / </span></li>
+            <Link to={`/decks/${deck.id}`}>
+              <li className="breadcrumbx-item" >Deck {deck.name}<span> / </span></li>
+            </Link>
 
             <li className="breadcrumbx-item">Edit Card {card.id}</li>
           </ul>
@@ -87,4 +89,5 @@ function CardEdit() {
     </>
   )
 }
+
 export default CardEdit;

@@ -14,9 +14,7 @@ function CardAdd() {
   const handleFrontChange = (event) => { setFront(event.target.value) }
   const handleBackChange = (event) => { setBack(event.target.value) }
 
-  const params = useParams();
-  const deckId = params.deckId;
-  const cardId = Number(params.cardId);
+  const { deckId } = useParams();
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -33,7 +31,7 @@ function CardAdd() {
     return () => {
       abortController.abort();
     };
-  }, [])
+  }, [card, deckId])
 
 
   const handleSubmit = async (event) => {
@@ -59,7 +57,8 @@ function CardAdd() {
                 <span> / </span>
               </li>
             </Link>
-            <li className="breadcrumb-item">{deck.name}</li>
+            <Link to={`/decks/${deck.id}`}>
+              <li className="breadcrumb-item">{deck.name}<span> / </span></li></Link>
             <li className="breadcrumb-item">Add Card</li>
           </ul>
         </nav>

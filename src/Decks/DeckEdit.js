@@ -12,8 +12,7 @@ function DeckEdit() {
 
   const handleDescriptionChange = (event) => { setDescription(event.target.value) }
 
-  const params = useParams();
-  const deckId = params.deckId;
+  const { deckId } = useParams();
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -57,7 +56,8 @@ function DeckEdit() {
                 <span> / </span>
               </li>
             </Link>
-            <li className="breadcrumb-item">{deck.name}</li>
+            <Link to={`/decks/${deck.id}`}>
+              <li className="breadcrumb-item">{deck.name}<span> / </span></li></Link>
             <li className="breadcrumb-item">Edit Deck</li>
           </ul>
         </nav>
