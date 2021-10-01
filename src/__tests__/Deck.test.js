@@ -318,7 +318,6 @@ describe("Decks", () => {
       id: 13,
       cards: [],
     };
-    console.log(0)
     readDeck.mockResolvedValue(mockDeck);
 
     const history = createMemoryHistory();
