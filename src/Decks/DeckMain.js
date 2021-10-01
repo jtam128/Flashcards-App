@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
-import { FaPlus } from "react-icons/fa";
 import { useHistory } from "react-router-dom";
 import DeckItem from "./DeckItem";
 import { deleteDeck, listDecks } from "../utils/api";
@@ -48,20 +47,11 @@ function DeckMain() {
   return (
     <>
       <div className="create-deck">
-        <button className="button-sm btn-create" onClick={
-          () => history.push("/decks/new")
-        }>
-          < FaPlus />
-          Create Deck
-        </button>
+        <button className="button-sm btn-create" onClick={() => history.push("/decks/new")}>Create Deck</button>
       </div>
-
       {deckElement}
-
     </>
   );
 }
-
-
 
 export default DeckMain;

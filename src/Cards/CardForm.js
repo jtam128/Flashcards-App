@@ -1,8 +1,7 @@
 import React from "react";
 import "../App.css";
-import { FaRegEye, FaTrashAlt } from "react-icons/fa";
 // import { FaPlus, FaRegEye, FaRegSave, FaTrashAlt } from "react-icons/fa";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function CardForm({ handleSubmit, handleFrontChange, front, handleBackChange, back, deck }) {
 

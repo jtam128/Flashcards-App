@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../App.css";
-import { FaHome } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { createDeck } from "../utils/api";
 import { useHistory } from "react-router-dom";
@@ -35,7 +34,7 @@ function DeckCreate() {
           <ul className="breadcrumb-list">
             <Link to="/">
               <li className="breadcrumbx-item">
-                <FaHome />Home
+                Home
                 <span> / </span>
               </li>
             </Link>

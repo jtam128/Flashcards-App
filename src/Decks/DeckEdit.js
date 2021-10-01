@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "../App.css";
 import { Link, useParams, useHistory } from "react-router-dom";
 import { updateDeck, readDeck } from "../utils/api";
-import { FaHome } from "react-icons/fa";
 
 function DeckEdit() {
   const [name, setName] = useState("");
@@ -40,14 +39,12 @@ function DeckEdit() {
 
     const abortController = new AbortController();
 
-    const updatedDeck = await updateDeck({ ...deck, name: name, description: description }, abortController.signal)
+    await updateDeck({ ...deck, name: name, description: description }, abortController.signal)
 
     setName("");
     setDescription("");
     history.push(`/decks/${deck.id}`);
   }
-
-
 
   return (
     <>
@@ -56,7 +53,7 @@ function DeckEdit() {
           <ul className="breadcrumb-list">
             <Link to="/">
               <li className="breadcrumbx-item">
-                <FaHome />Home
+                Home
                 <span> / </span>
               </li>
             </Link>

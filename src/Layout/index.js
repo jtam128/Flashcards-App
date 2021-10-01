@@ -11,16 +11,11 @@ import CardEdit from "../Cards/CardEdit";
 import NotFound from "./NotFound";
 import Header from "./Header";
 
-// import "./App.css";
-
-/**
- * App is a wrapper for <Layout>, you should not need to change this file.
- */
-// put the route tag in your parent component
 function Layout() {
   return (
     <div className="app-routes">
       <Header />
+
       <Switch>
         <Route exact path="/">
           <Home />
@@ -54,10 +49,10 @@ function Layout() {
           <DeckStudy />
         </Route>
 
-
         <Route>
           <NotFound />
         </Route>
+
       </Switch>
     </div>
   );

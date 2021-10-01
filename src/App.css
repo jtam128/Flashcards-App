@@ -35,8 +35,6 @@ h1, h2, h3, p {
   margin: 0;
 }
 
-/* Create two equal columns that floats next to each other */
-
 .line1 {
   color: green;
   padding-bottom: .5em;
@@ -58,13 +56,6 @@ h1, h2, h3, p {
   padding: 10px;
   height: 100px;
 }
-
-/* body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  font-family: var(--ff);
-} */
 
 .breadcrumb-nav {
   border: solid 2px;
@@ -91,6 +82,13 @@ h1, h2, h3, p {
 
 .deck-container {
   border: solid black 2px;
+  /* display: flex; */
+  color: black;
+  border: solid 2px darkgreen;
+  flex-direction: column;
+  padding: 1em;
+  border-radius: 4px;
+  margin-bottom: .5em;
 }
 
 .cards-container {
@@ -100,7 +98,7 @@ h1, h2, h3, p {
   flex-direction: column;
   padding: 1em;
   border-radius: 4px;
-  margin-bottom: 1em;
+  margin-bottom: .5em;
 }
 
 .create-deck {
@@ -163,10 +161,24 @@ p {
 
 .btn-done, .btn-cancel, .btn-flip, .btn-edit, .btn-create, .btn-view {
   background-color: grey;
+  margin-right: .3rem;
+}
+
+.btn-done:hover, .btn-cancel:hover, .btn-flip:hover, .btn-edit:hover, .btn-create:hover, .btn-view:hover {
+  background-color: rgb(65, 65, 65);
+}
+
+.btn-group-right {
+  display: flex;
+  justify-content: end;
 }
 
 .btn-save, .btn-submit, .btn-study, .btn-add {
   background-color: blue;
+}
+
+.btn-save:hover, .btn-submit:hover, .btn-study:hover, .btn-add:hover {
+  background-color: rgb(3, 3, 139);
 }
 
 .btn-delete {

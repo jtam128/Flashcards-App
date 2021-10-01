@@ -1,6 +1,5 @@
 import React from "react";
 import "../App.css";
-import { FaHome } from "react-icons/fa";
 import { Link, useParams, useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { readDeck } from "../utils/api";
@@ -14,11 +13,8 @@ function DeckStudy() {
 
   const params = useParams();
   const deckId = params.deckId;
-  console.log(1); // dbg..
 
   useEffect(() => {
-    console.log(2)
-
     const abortController = new AbortController();
     readDeck(deckId, abortController.signal).then((deck) => {
       console.log(3)
@@ -27,10 +23,8 @@ function DeckStudy() {
       if (deck.cards.length <= 2)
         setNotEnoughCards(true)
     })
-      // cur..
 
       .catch(err => {
-        // console.log(`err :>> `, err); // dbg..
         alert("DeckStudy " + err)
       });
 
@@ -38,8 +32,6 @@ function DeckStudy() {
       abortController.abort();
     };
   }, [card, deckId])
-
-  // if (!deck) return null;
 
   // shows current deck title
   function Line1() {
@@ -92,7 +84,6 @@ function DeckStudy() {
       } else
       {
         history.push("/");
-        // return
       }
     }
     setCardId(cardId + 1)
@@ -130,7 +121,7 @@ function DeckStudy() {
             <ul className="breadcrumb-list">
               <Link to="/">
                 <li className="breadcrumbx-item">
-                  <FaHome />Home
+                  Home
                   <span> / </span>
                 </li>
               </Link>
