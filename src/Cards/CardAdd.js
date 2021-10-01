@@ -27,9 +27,7 @@ function CardAdd() {
       setDeck(deck)
     })
       .catch(err => {
-        console.error(err.stack);
         console.error(err)
-        alert(err)
       });
 
     return () => {

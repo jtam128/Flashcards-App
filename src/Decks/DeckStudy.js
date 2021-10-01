@@ -17,7 +17,6 @@ function DeckStudy() {
   useEffect(() => {
     const abortController = new AbortController();
     readDeck(deckId, abortController.signal).then((deck) => {
-      console.log(3)
       setCard(card)
       setDeck(deck)
       if (deck.cards.length <= 2)
@@ -51,22 +50,16 @@ function DeckStudy() {
 
   function Content() {
     if (notEnoughCards)
-      return <p className="content-not-enough-card">You need at least 3 cards to study. There are 2 cards in this deck.</p>
+      return <p className="content-not-enough-card">You need at least 3 cards to study. There are {deck.cards.length} cards in this deck.</p>
     if (fliped)
       return (
         <>
-          <div>
-            {console.log(`content fliped :>> `, fliped)}
-          </div>
           <p className="content-normal">{deck.cards[cardId].back}</p>
         </>
       )
     else
       return (
         <>
-          <div>
-            {console.log(`content fliped :>> `, fliped)}
-          </div>
           <p className="content-normal">{deck.cards[cardId]?.front}</p>
         </>
       )
@@ -113,9 +106,6 @@ function DeckStudy() {
   {
     return (
       <>
-        <div>
-          {console.log('in render')}
-        </div>
         <div className="main-container">
           <nav className="breadcrumb-nav">
             <ul className="breadcrumb-list">

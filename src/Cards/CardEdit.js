@@ -59,9 +59,6 @@ function CardEdit() {
 
   return (
     <>
-      <div>
-        {console.log(`inside render jsx`)}
-      </div>
       <div className="main-container">
         <nav className="breadcrumb-nav">
           <ul className="breadcrumb-list">
