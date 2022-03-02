@@ -1,6 +1,11 @@
 ## Flashcard Application
 This application allows the user to create, view, and edit flashcards and decks, respectively.
 
+## Installation 
+1. Fork/Clone this repository
+2. Run `npm install` to load all dependencies
+3. Run `npm start` to host the server locally
+
 ## Screenshots
 ### Home Page:
 ![homepage](/src/images/opening-page.jpg)
