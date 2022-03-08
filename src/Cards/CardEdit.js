@@ -18,7 +18,6 @@ function CardEdit() {
   const handleBackChange = (event) => { setBack(event.target.value) }
 
   const { deckId, cardId } = useParams();
-  console.log(`2`); // dbg..
 
 
   useEffect(() => {
@@ -52,7 +51,6 @@ function CardEdit() {
 
     setFront("");
     setBack("");
-    console.log(`5`); // dbg..
     history.push(`/decks/${deck.id}`);
   }
 
