@@ -13,7 +13,7 @@ Built with:
 # Screenshots
 
 ## Home Page:
-The 'Home Page' shows the overview of all the decks. They will also see several control buttons. 
+The 'Home Page' shows the overview of all the decks. There are also several control buttons. 
 
 The 'Create Deck' button, allows the user to create a new deck. 
 
