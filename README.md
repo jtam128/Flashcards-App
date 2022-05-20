@@ -1,6 +1,14 @@
 # Flashcard Application
 The 'Flashcard' Application allows the user to create, view, and edit flashcards and decks, respectively. The decks are a collection of flashcards and the user can create as many decks as they want. The creation of the decks allows the user to easily go to a certain topic they want to study. Note that the data store for this APP is provided by the [Json-Server](  https://www.javatpoint.com/json-server#:~:text=JSON%20Server%20is%20a%20Node,Let'), which runs concurrently with the 'Flashcard' client.
 
+# Technology & Tools
+Built with:
+* React.js
+* JavaScript
+* HTML
+* CSS
+* [Json-Server](  https://www.javatpoint.com/json-server#:~:text=JSON%20Server%20is%20a%20Node,Let')
+
 # Screenshots
 
 ## Home Page:
@@ -65,14 +73,6 @@ The user will see this Alert box when they click the "Delete" button on the Home
 The user will see this Alert Box when they click on the "Delete" button for each individual card of each Deck. They can only delete cards when in the Deck page of each individual deck.
 
 ![deletecardpage](src/images/delete-card-popup.jpg)
-
-# Technology & Tools
-Built with:
-* React.js
-* JavaScript
-* HTML
-* CSS
-* [Json-Server](  https://www.javatpoint.com/json-server#:~:text=JSON%20Server%20is%20a%20Node,Let')
 
 ## Future Goals/Enhancements
 * Use a real database to support persistent data storage.
